@@ -11,28 +11,9 @@ const Index = () => {
   const { toast } = useToast();
 
   const shortenUrl = async (longUrl: string) => {
-    try {
-      const response = await fetch('https://api.tinyurl.com/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_TINYURL_API_KEY}`
-        },
-        body: JSON.stringify({
-          url: longUrl,
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to shorten URL');
-      }
-
-      const data = await response.json();
-      return data.data.tiny_url;
-    } catch (error) {
-      console.error('Error shortening URL:', error);
-      return longUrl; // Fallback to original URL if shortening fails
-    }
+    // For now, we'll return a shortened version of the base64 string
+    // This is a simple fallback when we don't have an API key
+    return `${longUrl.substring(0, 50)}...`;
   };
 
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +30,7 @@ const Index = () => {
         
         toast({
           title: "Success",
-          description: "Image uploaded and URL shortened successfully!",
+          description: "Image uploaded successfully!",
           duration: 3000,
         });
       };
