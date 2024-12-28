@@ -1,69 +1,84 @@
-# Welcome to your Lovable project
+# ImageLinker: Instant Image URL Generator
 
-## Project info
+ImageLinker is a simple and effective tool that allows users to upload images and instantly generate a shareable URL for each image. Whether you're sharing an image for a project, a website, or social media, ImageLinker provides a seamless and user-friendly experience.
 
-**URL**: https://lovable.dev/projects/b0659c44-b7ca-429e-b1c0-937d3e207439
+## 🌟 Features
 
-## How can I edit this code?
+- **Instant URL Generation**: Upload an image and get its link instantly.
+- **Responsive Design**: Works on desktop, tablet, and mobile devices.
+- **Secure Uploads**: Ensures uploaded images are processed safely.
+- **Easy Sharing**: Copy the generated URL with a single click.
 
-There are several ways of editing your application.
+## 🚀 Live Demo
 
-**Use Lovable**
+Check out the live tool: [ImageLinker](#)  
+*(Replace `#` with your live site URL)*
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b0659c44-b7ca-429e-b1c0-937d3e207439) and start prompting.
+## 🛠️ Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: HTML, CSS, JavaScript (optional frameworks if used, e.g., React)
+- **Backend**: Node.js, Express.js
+- **Storage**: Cloudinary, Firebase, or any preferred image hosting service
+- **Styling**: SCSS or CSS
+- **Deployment**: (e.g., Vercel, Netlify, Heroku)
 
-**Use your preferred IDE**
+## 📦 Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Follow these steps to set up the project locally:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Mianhassam96/imagelinker.git
+   cd imagelinker
+Install Dependencies:
 
-Follow these steps:
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Set Up Environment Variables: Create a .env file in the root directory and add the following:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+CLOUDINARY_URL=your_cloudinary_url
+PORT=5000
 
-# Step 3: Install the necessary dependencies.
-npm i
+Run the Application:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+    npm start
 
-**Edit a file directly in GitHub**
+    Open your browser and visit http://localhost:5000.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+📋 Usage
 
-**Use GitHub Codespaces**
+    Visit the website.
+    Upload an image using the Upload button.
+    Instantly receive a shareable URL for the uploaded image.
+    Copy and use the URL wherever you need.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🎨 Screenshots
 
-## What technologies are used for this project?
+Add screenshots of your tool here for a visual overview.
+🤝 Contributions
 
-This project is built with .
+Contributions are welcome! Follow these steps to contribute:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+    Fork the repository.
+    Create a new branch:
 
-## How can I deploy this project?
+git checkout -b feature-name
 
-Simply open [Lovable](https://lovable.dev/projects/b0659c44-b7ca-429e-b1c0-937d3e207439) and click on Share -> Publish.
+Make your changes and commit them:
 
-## I want to use a custom domain - is that possible?
+git commit -m "Add new feature"
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Push to your branch:
+
+    git push origin feature-name
+
+    Open a pull request.
+
+📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+🌐 Connect
+
+    GitHub: Mianhassam96
+    Website: ImageLinker
+    Email: mhassamkb@gmail.com
