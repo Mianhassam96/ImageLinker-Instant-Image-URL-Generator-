@@ -31,9 +31,13 @@ const Index = () => {
     navigator.clipboard.writeText(imageUrl);
     toast({
       title: "Copied!",
-      description: "URL copied to clipboard",
+      description: "Full URL copied to clipboard",
       duration: 3000,
     });
+  };
+
+  const getShortenedUrl = (url: string) => {
+    return url.length > 50 ? `${url.substring(0, 47)}...` : url;
   };
 
   return (
@@ -79,14 +83,15 @@ const Index = () => {
                   
                   <div className="flex items-center gap-2 p-2 bg-white rounded-lg border">
                     <LinkIcon className="h-4 w-4 text-gray-500 shrink-0" />
-                    <div className="break-all text-sm">
-                      {imageUrl}
+                    <div className="truncate flex-1 text-sm">
+                      {getShortenedUrl(imageUrl)}
                     </div>
                     <Button
                       variant="ghost"
                       size="icon"
                       onClick={copyToClipboard}
                       className="shrink-0"
+                      title="Copy full URL"
                     >
                       <Copy className="h-4 w-4" />
                     </Button>
