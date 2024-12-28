@@ -1,26 +1,24 @@
 # ImageLinker: Instant Image URL Generator
 
-ImageLinker is a simple and effective tool that allows users to upload images and instantly generate a shareable URL for each image. Whether you're sharing an image for a project, a website, or social media, ImageLinker provides a seamless and user-friendly experience.
+ImageLinker is a powerful and user-friendly tool that allows users to upload images and instantly generate shareable URLs. Built with a modern tech stack, it ensures a seamless and secure experience for image hosting and sharing.
 
 ## 🌟 Features
 
-- **Instant URL Generation**: Upload an image and get its link instantly.
-- **Responsive Design**: Works on desktop, tablet, and mobile devices.
-- **Secure Uploads**: Ensures uploaded images are processed safely.
-- **Easy Sharing**: Copy the generated URL with a single click.
+- **Instant URL Generation**: Upload an image and get a shareable link instantly.
+- **Responsive Design**: Works flawlessly across devices (desktop, tablet, and mobile).
+- **Secure Uploads**: Ensures safe processing of user images.
+- **Effortless Sharing**: Copy the generated URL with a single click.
 
 ## 🚀 Live Demo
 
-Check out the live tool: [ImageLinker](#)  
-*(Replace `#` with your live site URL)*
+Explore the live tool here: [ImageLinker](https://image-linker-instant-image-url-generator.vercel.app/)
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript (optional frameworks if used, e.g., React)
-- **Backend**: Node.js, Express.js
-- **Storage**: Cloudinary, Firebase, or any preferred image hosting service
-- **Styling**: SCSS or CSS
-- **Deployment**: (e.g., Vercel, Netlify, Heroku)
+- **Languages**:
+  - TypeScript (97.5%)
+  - CSS (1.7%)
+  - Other (0.8%)
 
 ## 📦 Installation
 
@@ -30,55 +28,67 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/Mianhassam96/imagelinker.git
    cd imagelinker
-Install Dependencies:
+   ```
 
-npm install
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-Set Up Environment Variables: Create a .env file in the root directory and add the following:
+3. **Set Up Environment Variables**:
+   Create a `.env` file in the root directory and add the following:
+   ```env
+   CLOUDINARY_URL=your_cloudinary_url
+   PORT=5000
+   ```
 
-CLOUDINARY_URL=your_cloudinary_url
-PORT=5000
+4. **Run the Application**:
+   ```bash
+   npm start
+   ```
 
-Run the Application:
+5. Open your browser and visit `http://localhost:5000`.
 
-    npm start
+## 📋 Usage
 
-    Open your browser and visit http://localhost:5000.
+1. Visit the live website or run the application locally.
+2. Upload an image using the **Upload** button.
+3. Instantly receive a shareable URL for the uploaded image.
+4. Copy and use the URL wherever needed.
 
-📋 Usage
+## 🎨 Screenshots
 
-    Visit the website.
-    Upload an image using the Upload button.
-    Instantly receive a shareable URL for the uploaded image.
-    Copy and use the URL wherever you need.
+Add screenshots of your tool here to showcase its features and design.
 
-🎨 Screenshots
-
-Add screenshots of your tool here for a visual overview.
-🤝 Contributions
+## 🤝 Contributions
 
 Contributions are welcome! Follow these steps to contribute:
 
-    Fork the repository.
-    Create a new branch:
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
 
-git checkout -b feature-name
+## 📄 License
 
-Make your changes and commit them:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-git commit -m "Add new feature"
+## 🌐 Connect
 
-Push to your branch:
+- **GitHub**: [Mianhassam96](https://github.com/Mianhassam96)
+- **Live Demo**: [ImageLinker](https://image-linker-instant-image-url-generator.vercel.app/)
+- **Email**: [mhassamkb@gmail.com](mailto:mhassamkb@gmail.com)
 
-    git push origin feature-name
+---
 
-    Open a pull request.
-
-📄 License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-🌐 Connect
-
-    GitHub: Mianhassam96
-    Website: ImageLinker
-    Email: mhassamkb@gmail.com
+Let me know if you need any additional details or modifications!
