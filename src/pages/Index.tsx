@@ -7,14 +7,7 @@ import { Upload, Link as LinkIcon, Copy } from "lucide-react";
 
 const Index = () => {
   const [imageUrl, setImageUrl] = useState<string>("");
-  const [shortUrl, setShortUrl] = useState<string>("");
   const { toast } = useToast();
-
-  const shortenUrl = async (longUrl: string) => {
-    // For now, we'll return a shortened version of the base64 string
-    // This is a simple fallback when we don't have an API key
-    return `${longUrl.substring(0, 50)}...`;
-  };
 
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -23,10 +16,6 @@ const Index = () => {
       reader.onloadend = async () => {
         const base64String = reader.result as string;
         setImageUrl(base64String);
-        
-        // Get shortened URL
-        const shortened = await shortenUrl(base64String);
-        setShortUrl(shortened);
         
         toast({
           title: "Success",
@@ -39,7 +28,7 @@ const Index = () => {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(shortUrl || imageUrl);
+    navigator.clipboard.writeText(imageUrl);
     toast({
       title: "Copied!",
       description: "URL copied to clipboard",
@@ -90,8 +79,8 @@ const Index = () => {
                   
                   <div className="flex items-center gap-2 p-2 bg-white rounded-lg border">
                     <LinkIcon className="h-4 w-4 text-gray-500 shrink-0" />
-                    <div className="truncate flex-1 text-sm">
-                      {shortUrl || imageUrl}
+                    <div className="break-all text-sm">
+                      {imageUrl}
                     </div>
                     <Button
                       variant="ghost"
