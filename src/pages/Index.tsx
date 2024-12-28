@@ -7,18 +7,49 @@ import { Upload, Link as LinkIcon, Copy } from "lucide-react";
 
 const Index = () => {
   const [imageUrl, setImageUrl] = useState<string>("");
+  const [shortUrl, setShortUrl] = useState<string>("");
   const { toast } = useToast();
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const shortenUrl = async (longUrl: string) => {
+    try {
+      const response = await fetch('https://api.tinyurl.com/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_TINYURL_API_KEY}`
+        },
+        body: JSON.stringify({
+          url: longUrl,
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to shorten URL');
+      }
+
+      const data = await response.json();
+      return data.data.tiny_url;
+    } catch (error) {
+      console.error('Error shortening URL:', error);
+      return longUrl; // Fallback to original URL if shortening fails
+    }
+  };
+
+  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => {
+      reader.onloadend = async () => {
         const base64String = reader.result as string;
         setImageUrl(base64String);
+        
+        // Get shortened URL
+        const shortened = await shortenUrl(base64String);
+        setShortUrl(shortened);
+        
         toast({
           title: "Success",
-          description: "Image uploaded successfully!",
+          description: "Image uploaded and URL shortened successfully!",
           duration: 3000,
         });
       };
@@ -27,10 +58,10 @@ const Index = () => {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(imageUrl);
+    navigator.clipboard.writeText(shortUrl || imageUrl);
     toast({
       title: "Copied!",
-      description: "Image URL copied to clipboard",
+      description: "URL copied to clipboard",
       duration: 3000,
     });
   };
@@ -78,7 +109,9 @@ const Index = () => {
                   
                   <div className="flex items-center gap-2 p-2 bg-white rounded-lg border">
                     <LinkIcon className="h-4 w-4 text-gray-500 shrink-0" />
-                    <div className="truncate flex-1 text-sm">{imageUrl}</div>
+                    <div className="truncate flex-1 text-sm">
+                      {shortUrl || imageUrl}
+                    </div>
                     <Button
                       variant="ghost"
                       size="icon"
